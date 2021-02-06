@@ -13,13 +13,19 @@ export default class CodeLine extends React.Component{
         }
     }
 
+    setText = e =>{
+        console.log(e.target.innerText);
+        this.text = e.target.innerText;
+    }
+
     render(){
         return(
             <div
                 className="code"
                 onKeyPress={this.enter}
+                onInput={this.setText}
                 contentEditable={true}
-                dangerouslySetInnerHTML={{__html: "Teste"}}
+                dangerouslySetInnerHTML={{__html: this.text}}
             ></div>
         );
     }
