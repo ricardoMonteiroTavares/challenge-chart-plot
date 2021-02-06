@@ -4,6 +4,7 @@ import './CodeLine.css'
 export default class CodeLine extends React.Component{
     constructor(){
         super();
+        this.text = "Teste 2";
     }
 
     enter = e =>{
