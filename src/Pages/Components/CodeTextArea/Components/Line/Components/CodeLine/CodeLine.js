@@ -9,6 +9,14 @@ export default class CodeLine extends React.Component{
         };
     }
     render(){
-        return <div className="code">{this.state.text}</div>;
+        return(
+            <div
+                className="code"
+                onKeyPress={this.enter}
+                contentEditable={true}
+                dangerouslySetInnerHTML={{__html: "Teste"}}
+            ></div>
+        );
     }
+
 }
