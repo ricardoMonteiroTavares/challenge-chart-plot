@@ -1,5 +1,5 @@
 import React from 'react';
-import Line from './Line/Line';
+import Line from './Components/Line/Line';
 import './CodeTextArea.css';
 
 export default class CodeTextArea extends React.Component{
