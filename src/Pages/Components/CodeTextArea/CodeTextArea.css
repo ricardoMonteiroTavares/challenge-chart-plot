@@ -2,7 +2,7 @@
 
 .textArea{
     width: 100%;
-    resize: vertical;
+    height: 400px;
     background-color: #323642;
     border: none;
     color: white;
