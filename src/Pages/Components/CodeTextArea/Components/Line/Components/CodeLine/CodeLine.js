@@ -4,9 +4,7 @@ import './CodeLine.css'
 export default class CodeLine extends React.Component{
     constructor(){
         super();
-        this.state = {
-            text: "Teste",
-        };
+    }
 
     enter = e =>{
         if(e.key === 'Enter'){            
