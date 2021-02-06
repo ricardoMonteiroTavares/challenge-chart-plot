@@ -7,7 +7,13 @@ export default class CodeLine extends React.Component{
         this.state = {
             text: "Teste",
         };
+
+    enter = e =>{
+        if(e.key === 'Enter'){            
+            console.log("Enter foi pressionado");
+        }
     }
+
     render(){
         return(
             <div
