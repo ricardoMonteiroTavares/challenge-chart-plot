@@ -1,20 +1,22 @@
 import React from 'react';
+import CodeLine from './Components/CodeLine/CodeLine';
+import NumberLine from './Components/NumberLine/NumberLine';
 import './Line.css'
 
 export default class Line extends React.Component{
     constructor(){
         super();
         this.state = {
-            lineNumber: 1,
-            text: "Teste",
-            isSelected: false
+            id: 1,
+            isSelected: false,
+            isEnabled: true
         };
     }
     render(){
         return(
             <div className="line">
-                <div className="lineNumber">{this.state.lineNumber}</div>
-                <div className="code">{this.state.text}</div>
+                <NumberLine id={this.state.id}/>
+                <CodeLine />
             </div>
         );
     }

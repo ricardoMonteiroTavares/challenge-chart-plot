@@ -4,16 +4,3 @@
     flex-direction: row;
     line-height: 30px;
 }
-
-.lineNumber{
-    width: 40px;
-    height: 100%;
-    text-align: end;
-    padding-right: 5px;
-    background-color: #60646d;
-    color: #323642;
-}
-
-.code{
-    margin-left: 10px;
-}
