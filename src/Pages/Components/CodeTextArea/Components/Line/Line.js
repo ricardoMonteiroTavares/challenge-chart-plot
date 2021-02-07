@@ -1,6 +1,6 @@
 import React from 'react';
 import CodeLine from './Components/CodeLine/CodeLine';
-import NumberLine from './Components/NumberLine/NumberLine';
+import NumberLineColumn from './Components/NumberLineColumn/NumberLineColumn';
 import './Line.css'
 
 export default class Line extends React.Component{
@@ -22,14 +22,17 @@ export default class Line extends React.Component{
     enter = e =>{
         if(e.key === 'Enter'){            
             console.log("Enter foi pressionado");
+            var newValue = this.state.qtdLines + 1;
+            console.log(newValue);
+            this.setState({qtdLines: newValue});
         }
     }
 
     render(){
         return(
             <div className="line">
-                <NumberLine id={this.state.id}/>
-                <CodeLine />
+                <NumberLineColumn maxLines={this.state.qtdLines}/>
+                <CodeLine onChange={this.setText} onKeyPress={this.enter}/>
             </div>
         );
     }
