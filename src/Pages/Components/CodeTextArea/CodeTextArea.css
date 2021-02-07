@@ -6,4 +6,5 @@
     background-color: #323642;
     border: none;
     font-family: 'Source Code Pro', monospace;
+    overflow: auto;
 }
