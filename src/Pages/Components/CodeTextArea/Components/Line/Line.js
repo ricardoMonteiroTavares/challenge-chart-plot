@@ -14,25 +14,24 @@ export default class Line extends React.Component{
         };
     }
 
-    setText = e =>{
-        console.log(e.target.innerText);
-        this.setState({text: e.target.innerText});
+    lineCounter = (text) => {
+        var counter = newText.split('\n').length;
+        this.setState({qtdLines: counter});
+        console.log(counter);
     }
 
-    enter = e =>{
-        if(e.key === 'Enter'){            
-            console.log("Enter foi pressionado");
-            var newValue = this.state.qtdLines + 1;
-            console.log(newValue);
-            this.setState({qtdLines: newValue});
-        }
+    setText = e => {
+        console.log(e.target.value);
+        var newText = e.target.value;
+        this.setState({text: newText});
+        this.lineCounter(newText);
     }
 
     render(){
         return(
             <div className="line">
                 <NumberLineColumn maxLines={this.state.qtdLines}/>
-                <CodeLine onChange={this.setText} onKeyPress={this.enter}/>
+                <CodeLine onChange={this.setText} value={this.state.text}/>
             </div>
         );
     }
