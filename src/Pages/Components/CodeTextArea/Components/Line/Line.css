@@ -1,6 +1,6 @@
 .line{
-    height: 30px;
+    
     display: flex;  
     flex-direction: row;
-    line-height: 30px;
+
 }
