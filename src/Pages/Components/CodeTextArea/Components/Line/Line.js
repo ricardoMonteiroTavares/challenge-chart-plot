@@ -7,11 +7,24 @@ export default class Line extends React.Component{
     constructor(){
         super();
         this.state = {
-            id: 1,
             isSelected: false,
-            isEnabled: true
+            isEnabled: true,
+            text: "Teste",
+            qtdLines: 1,
         };
     }
+
+    setText = e =>{
+        console.log(e.target.innerText);
+        this.setState({text: e.target.innerText});
+    }
+
+    enter = e =>{
+        if(e.key === 'Enter'){            
+            console.log("Enter foi pressionado");
+        }
+    }
+
     render(){
         return(
             <div className="line">

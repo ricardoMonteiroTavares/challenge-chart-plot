@@ -2,30 +2,18 @@ import React from 'react';
 import './CodeLine.css'
 
 export default class CodeLine extends React.Component{
-    constructor(){
-        super();
-        this.text = "Teste 2";
-    }
-
-    enter = e =>{
-        if(e.key === 'Enter'){            
-            console.log("Enter foi pressionado");
-        }
-    }
-
-    setText = e =>{
-        console.log(e.target.innerText);
-        this.text = e.target.innerText;
+    constructor(props){
+        super(props);
     }
 
     render(){
         return(
             <div
                 className="code"
-                onKeyPress={this.enter}
-                onInput={this.setText}
+                onKeyPress={this.props.onKeyPress}
+                onInput={this.props.onChange}
                 contentEditable={true}
-                dangerouslySetInnerHTML={{__html: this.text}}
+                dangerouslySetInnerHTML={{__html: "Teste"}}
             ></div>
         );
     }
