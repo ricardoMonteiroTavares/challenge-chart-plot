@@ -15,7 +15,7 @@ export default class Line extends React.Component{
     }
 
     lineCounter = (text) => {
-        var counter = newText.split('\n').length;
+        var counter = text.split('\n').length;
         this.setState({qtdLines: counter});
         console.log(counter);
     }
