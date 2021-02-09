@@ -11,7 +11,7 @@ export default class CodeTextArea extends React.Component{
         const style = {height: this.props.height+'px'}
         return(
             <div style={style} className="textArea">
-                <Line />
+                <Line style={style}/>
             </div>            
         );
     }

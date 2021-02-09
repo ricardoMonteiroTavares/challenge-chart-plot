@@ -10,10 +10,7 @@ export default class CodeLine extends React.Component{
         return(
             <textarea
                 className="code"
-                //onKeyPress={this.props.onKeyPress}
-                //onInput={this.props.onChange}
-                //contentEditable={true}
-                //dangerouslySetInnerHTML={{__html: "Teste"}}
+                style={this.props.style}
                 onChange={this.props.onChange}
                 value={this.props.value}
             ></textarea>

@@ -4,6 +4,10 @@ import './NumberLineColumn.css'
 
 export default class NumberLineColumn extends Component{
 
+    constructor(props) {
+        super(props);
+    }
+
     generate = (max) => {
         var lines = [];
         for(var i = 1; i <= max; i++){
@@ -12,9 +16,9 @@ export default class NumberLineColumn extends Component{
         return lines
     }
 
-    render(props){
+    render(){
         return(
-            <div className="col">
+            <div style={this.props.style} className="col">
                 {this.generate(this.props.maxLines)}
             </div>
         );

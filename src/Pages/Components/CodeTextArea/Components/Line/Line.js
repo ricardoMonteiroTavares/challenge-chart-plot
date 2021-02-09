@@ -7,8 +7,6 @@ export default class Line extends React.Component{
     constructor(){
         super();
         this.state = {
-            isSelected: false,
-            isEnabled: true,
             text: "Teste",
             qtdLines: 1,
         };
@@ -30,8 +28,8 @@ export default class Line extends React.Component{
     render(){
         return(
             <div className="line">
-                <NumberLineColumn maxLines={this.state.qtdLines}/>
-                <CodeLine onChange={this.setText} value={this.state.text}/>
+                <NumberLineColumn style={this.props.style} maxLines={this.state.qtdLines}/>
+                <CodeLine style={this.props.style} onChange={this.setText} value={this.state.text}/>
             </div>
         );
     }

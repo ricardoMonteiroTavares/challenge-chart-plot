@@ -1,4 +1,6 @@
 .col{
     width: 40px;
     text-align: end;
+    background-color: #60646d;
+    padding-right: 5px;
 }
