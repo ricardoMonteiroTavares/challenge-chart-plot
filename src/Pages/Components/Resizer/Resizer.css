@@ -1,0 +1,7 @@
+.resizer {
+    margin: 0;
+    cursor: ns-resize;
+    height: 3px;
+    background-color: black;
+    border: 1px solid black;
+  }
