@@ -1,5 +1,5 @@
 import React from 'react';
-import Line from './Components/Line/Line';
+import Area from './Components/Area/Area';
 import './CodeTextArea.css';
 
 export default class CodeTextArea extends React.Component{
@@ -11,7 +11,7 @@ export default class CodeTextArea extends React.Component{
         const style = {height: this.props.height+'px'}
         return(
             <div style={style} className="textArea">
-                <Line style={style}/>
+                <Area style={style}/>
             </div>            
         );
     }

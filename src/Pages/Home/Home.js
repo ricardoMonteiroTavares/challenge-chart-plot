@@ -3,26 +3,26 @@ import Header from './Components/Header/Header.js';
 import Bottom from './Components/Bottom/Bottom.js';
 import CodeTextArea from "./Components/CodeTextArea/CodeTextArea.js";
 import Resizer from './Components/Resizer/Resizer';
-import LineChart from './Components/LineChart/LineChart.js';
+import Chart from './Components/Chart/Chart.js';
 
-export default class App extends Component {
+export default class Home extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      codeTextAreaHeight: 400,
+      width: this.props.width,
+      height: this.props.height,
+      codeTextAreaHeight: (this.props.height-(66*2))/2,
+      graphicHeight: (this.props.height-(66*2))/2,
       resizing: false,
-      data: {
-         //Bring in data
-          labels: ["Jan", "Feb", "March"],
-          datasets: [
-              {
-                  label: "Sales",
-                  data: [86, 67, 91],
-              }
-          ]
-      },
-      options: {}
+      data: [
+        {name: 'Page A', uv: 400, pv: 2400, amt: 2400},
+        {name: 'Page B', uv: 300, pv: 2400, amt: 2400},
+        {name: 'Page C', uv: 300, pv: 2400, amt: 2400},
+        {name: 'Page D', uv: 200, pv: 2400, amt: 2400},
+        {name: 'Page E', uv: 275, pv: 2400, amt: 2400},
+        {name: 'Page F', uv: 195, pv: 2400, amt: 2400}
+      ],
     };
   }
   mouseDownHandler = e => {
@@ -36,9 +36,11 @@ export default class App extends Component {
 
   resize = event => {
     const mousePositionY = event.clientY;
-    this.setState({
-      codeTextAreaHeight: (mousePositionY - 66)
-    });
+    this.setState(prevState=>{
+      return {
+      codeTextAreaHeight: (mousePositionY - 66),
+      graphicHeight: (prevState.height - 66 - mousePositionY)
+    }});
   }
 
   stopResize = event => {
@@ -57,7 +59,7 @@ export default class App extends Component {
        <Header/>
        <CodeTextArea height={this.state.codeTextAreaHeight}/>
        <Resizer mouseDownHandler={this.mouseDownHandler}/>
-       <LineChart data={this.state.data} options={this.state.options}/>
+       <Chart data={this.state.data} height={this.state.graphicHeight} width={this.props.width}/>
        <Bottom/>
       </div>
     );

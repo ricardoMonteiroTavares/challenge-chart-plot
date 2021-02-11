@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './Pages/App';
+import Home from './Pages/Home/Home.js';
 import * as serviceWorker from './serviceWorker';
 
 import { useState, useEffect } from 'react';
@@ -29,16 +29,16 @@ export default function useWindowDimensions() {
   return windowDimensions;
 }
 
-const Component = () => {
+const App = () => {
     const { height, width } = useWindowDimensions();
   
     return (
       <div>
-        width: {width} ~ height: {height}
+        <Home height={height} width={width}/>
       </div>
     );
   }
-ReactDOM.render(<Component />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

@@ -1,7 +1,7 @@
 import React from 'react';
-import './CodeLine.css'
+import './CodeColumn.css'
 
-export default class CodeLine extends React.Component{
+export default class CodeColumn extends React.Component{
     constructor(props){
         super(props);
     }

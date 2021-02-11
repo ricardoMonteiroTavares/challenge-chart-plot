@@ -1,9 +1,9 @@
 import React from 'react';
-import CodeLine from './Components/CodeLine/CodeLine';
+import CodeColumn from './Components/CodeColumn/CodeColumn';
 import NumberLineColumn from './Components/NumberLineColumn/NumberLineColumn';
-import './Line.css'
+import './Area.css'
 
-export default class Line extends React.Component{
+export default class Area extends React.Component{
     constructor(){
         super();
         this.state = {
@@ -29,7 +29,7 @@ export default class Line extends React.Component{
         return(
             <div className="line">
                 <NumberLineColumn style={this.props.style} maxLines={this.state.qtdLines}/>
-                <CodeLine style={this.props.style} onChange={this.setText} value={this.state.text}/>
+                <CodeColumn style={this.props.style} onChange={this.setText} value={this.state.text}/>
             </div>
         );
     }
