@@ -3,6 +3,7 @@ import Header from './Components/Header/Header.js';
 import Bottom from './Components/Bottom/Bottom.js';
 import CodeTextArea from "./Components/CodeTextArea/CodeTextArea.js";
 import Resizer from './Components/Resizer/Resizer';
+import LineChart from './Components/LineChart/LineChart.js';
 
 export default class App extends Component {
 
@@ -11,6 +12,17 @@ export default class App extends Component {
     this.state = {
       codeTextAreaHeight: 400,
       resizing: false,
+      data: {
+         //Bring in data
+          labels: ["Jan", "Feb", "March"],
+          datasets: [
+              {
+                  label: "Sales",
+                  data: [86, 67, 91],
+              }
+          ]
+      },
+      options: {}
     };
   }
   mouseDownHandler = e => {
@@ -45,6 +57,7 @@ export default class App extends Component {
        <Header/>
        <CodeTextArea height={this.state.codeTextAreaHeight}/>
        <Resizer mouseDownHandler={this.mouseDownHandler}/>
+       <LineChart data={this.state.data} options={this.state.options}/>
        <Bottom/>
       </div>
     );
