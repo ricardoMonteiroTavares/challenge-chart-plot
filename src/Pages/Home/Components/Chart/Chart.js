@@ -10,7 +10,7 @@ export default class Chart extends React.Component{
         console.log(this.props.height);
         return(
             <LineChart width={this.props.width} height={this.props.height} data={this.props.data}>
-                <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+                <Line type="monotone" dataKey="uv" stroke="#8884d8" strokeWidth={3} dot={{ strokeWidth: 10 }}/>
                 <CartesianGrid stroke="#ccc" />
                 <XAxis dataKey="name" />
             </LineChart>
