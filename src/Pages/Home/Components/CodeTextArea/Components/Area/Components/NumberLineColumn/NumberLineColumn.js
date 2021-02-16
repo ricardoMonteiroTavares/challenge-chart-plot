@@ -18,8 +18,10 @@ export default class NumberLineColumn extends Component{
 
     render(){
         return(
-            <div style={this.props.style} className="col">
-                {this.generate(this.props.maxLines)}
+            <div className="overflow">
+                <div style={this.props.style} className="col">
+                    {this.generate(this.props.maxLines)}
+                </div>
             </div>
         );
     }

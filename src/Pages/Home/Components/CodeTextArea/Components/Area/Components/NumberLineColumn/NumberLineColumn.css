@@ -1,6 +1,12 @@
-.col{
+.overflow{
     width: 40px;
+    height: 100%;
+    overflow: hidden;
+}
+.col{
+    width: 100%;
     text-align: end;
     background-color: #60646d;
-    padding-right: 5px;
+    padding-right: 15px;
+    overflow: auto;
 }
