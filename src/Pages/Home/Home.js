@@ -15,6 +15,8 @@ export default class Home extends Component {
       codeTextAreaHeight: (this.props.height-(66*2))/2,
       graphicHeight: (this.props.height-(66*2))/2,
       resizing: false,
+      text: "Teste",
+      qtdLines: 1,
       data: [
         {name: 'Page A', uv: 400, pv: 2400, amt: 2400},
         {name: 'Page B', uv: 300, pv: 2400, amt: 2400},
@@ -52,12 +54,24 @@ export default class Home extends Component {
     window.removeEventListener("mouseup", this.stopResize, false);
   }
   
+  setText = e => {
+    console.log(e.target.value);
+    var newText = e.target.value;
+    this.setState({text: newText});
+    this.lineCounter(newText);
+  }
 
+  lineCounter = (text) => {
+    var counter = text.split('\n').length;
+    this.setState({qtdLines: counter});
+    console.log(counter);
+  }
+  
   render(){
     return (
       <div>
        <Header/>
-       <CodeTextArea height={this.state.codeTextAreaHeight}/>
+       <CodeTextArea height={this.state.codeTextAreaHeight} onChange={this.setText} text={this.state.text} qtdLines={this.state.qtdLines}/>
        <Resizer mouseDownHandler={this.mouseDownHandler}/>
        <Chart data={this.state.data} height={this.state.graphicHeight} width={this.props.width}/>
        <Bottom/>

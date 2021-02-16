@@ -12,24 +12,11 @@ export default class Area extends React.Component{
         };
     }
 
-    lineCounter = (text) => {
-        var counter = text.split('\n').length;
-        this.setState({qtdLines: counter});
-        console.log(counter);
-    }
-
-    setText = e => {
-        console.log(e.target.value);
-        var newText = e.target.value;
-        this.setState({text: newText});
-        this.lineCounter(newText);
-    }
-
     render(){
         return(
             <div className="line">
-                <NumberLineColumn style={this.props.style} maxLines={this.state.qtdLines}/>
-                <CodeColumn style={this.props.style} onChange={this.setText} value={this.state.text}/>
+                <NumberLineColumn style={this.props.style} maxLines={this.props.qtdLines}/>
+                <CodeColumn style={this.props.style} onChange={this.props.onChange} value={this.props.text}/>
             </div>
         );
     }

@@ -11,7 +11,7 @@ export default class CodeTextArea extends React.Component{
         const style = {height: this.props.height+'px'}
         return(
             <div style={style} className="textArea">
-                <Area style={style}/>
+                <Area style={style} onChange={this.props.onChange} text={this.props.text} qtdLines={this.props.qtdLines}/>
             </div>            
         );
     }
