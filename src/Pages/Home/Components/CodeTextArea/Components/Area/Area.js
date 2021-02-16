@@ -4,12 +4,8 @@ import NumberLineColumn from './Components/NumberLineColumn/NumberLineColumn';
 import './Area.css'
 
 export default class Area extends React.Component{
-    constructor(){
-        super();
-        this.state = {
-            text: "Teste",
-            qtdLines: 1,
-        };
+    constructor(props){
+        super(props);
     }
 
     render(){

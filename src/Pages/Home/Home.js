@@ -66,7 +66,17 @@ export default class Home extends Component {
     this.setState({qtdLines: counter});
     console.log(counter);
   }
-  
+
+  generateChart = () => {
+    var str = this.state.text.replaceAll("\'", "\"");
+    str = str.replaceAll(new RegExp("(\\w+)([:])",'g'), "\"$1\"$2");
+    str = str.replaceAll("\n", ",");
+    str = "["+str+"]";
+    var resp = JSON.parse(str);
+    console.log("---JSON Data---")
+    console.log(resp);
+  }
+
   render(){
     return (
       <div>
@@ -74,7 +84,7 @@ export default class Home extends Component {
        <CodeTextArea height={this.state.codeTextAreaHeight} onChange={this.setText} text={this.state.text} qtdLines={this.state.qtdLines}/>
        <Resizer mouseDownHandler={this.mouseDownHandler}/>
        <Chart data={this.state.data} height={this.state.graphicHeight} width={this.props.width}/>
-       <Bottom/>
+       <Bottom onClick={this.generateChart}/>
       </div>
     );
   }
